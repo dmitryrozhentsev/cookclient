@@ -41,7 +41,7 @@ export const CookList: React.FunctionComponent = ()=>{
             <ul className={'cook-list'}>
             {cookList.length !== 0
             ? cookList.map((cook)=>{
-                return <li>{cook.title}</li>
+                return <li className={'cook-list__item'}>{cook.title}</li>
             })
             : null
         }
