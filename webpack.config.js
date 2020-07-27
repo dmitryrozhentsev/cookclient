@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const path = require('path');
 
 const config = {
@@ -37,7 +36,7 @@ const config = {
       },
       {
         test: /\.svg$/,
-        use: 'file-loader'
+        use: 'svg-react-loader'
       },
       {
         test: /\.png$/,

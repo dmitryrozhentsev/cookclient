@@ -9,9 +9,12 @@
         "moduleResolution": "node",
         "target": "es5",
         "allowJs": true,
-        "jsx": "react",
+        "jsx": "react"
     },
+    "files": [
+        "custom.d.ts"
+    ],
     "include": [
-        "./src/**/*"
+        "./src/**/*", "src/custom.d.ts"
     ]
 }

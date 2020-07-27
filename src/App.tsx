@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { hot } from "react-hot-loader/root";
-import { CookList } from "./components/cook-list/cook-list";
-import { AddCook } from "./components/add-cook/add-cook";
+import { HeaderMenu } from "./features/headerMenu/headerMenu";
+import 'normalize.css';
+import {useState} from "react";
 
 const App = () => {
+    const [activetab, setActiveTab] = useState<number>(0);
     return (
       <>
-          <AddCook />
-          <CookList />
+      <HeaderMenu active={ activetab } setActive={setActiveTab}/>
       </>
     );
   };
