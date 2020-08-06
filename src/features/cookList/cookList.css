@@ -1,0 +1,25 @@
+.cookList__content {
+    display: flex;
+    justify-content: center;
+}
+
+.cookList__wrapper {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cookList {
+    width: 760px;
+    display: flex;
+    align-items: center;
+    flex-wrap:wrap;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.cookList_item {
+    margin: 10px;
+}

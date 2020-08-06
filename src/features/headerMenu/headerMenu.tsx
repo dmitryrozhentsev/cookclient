@@ -5,45 +5,52 @@ import { SearchIcon } from "../../assets/icons/searchIcon";
 import { RandomIcon } from "../../assets/icons/randomIcon";
 import { FavouriteIcon } from "../../assets/icons/FavouriteIcon";
 import { AddIcon } from "../../assets/icons/addIcon";
+import { ListIcon } from "../../assets/icons/listIcon";
 import {IHeaderMenuType} from "./headerMenu.type";
+import { Link} from "react-router-dom";
 
 export const HeaderMenu = (props:IHeaderMenuType) => {
     const tabs = [
         {
-            value: 'Поиск',
-            className: 'searchButton',
-            icon: <SearchIcon height={'30'}
-                              width={'30'}
-                              className={'searchButton'}
-            />
+            icon: <ListIcon
+                height={'40'}
+                width={'40'}
+                className={'listButton button'}
+            />,
+            link: '/'
         },
         {
-            value: 'Случайное',
-            className: 'randomButton',
-            icon: <RandomIcon
-                height={'20'}
-                width={'20'}
-                className={'randomButton'}
-            />
+            icon: <SearchIcon height={'40'}
+                              width={'40'}
+                              className={'searchButton button'}
+            />,
+            link: '/search'
         },
         {
-            value: 'Любимое',
-            className: 'favouriteButton',
-            icon:  <FavouriteIcon
-                height={'20'}
-                width={'20'}
-                className={'randomButton'}
-            />
+            icon:  <RandomIcon
+                height={'40'}
+                width={'40'}
+                className={'randomButton button'}
+            />,
+            link: '/random'
         },
         {
-            value: 'Добавить',
-            className: 'addButton',
+            icon:   <FavouriteIcon
+                height={'40'}
+                width={'40'}
+                className={'favouriteButton button'}
+            />,
+            link: '/fav'
+        },
+        {
             icon:   <AddIcon
-                height={'20'}
-                width={'20'}
-                className={'addButton'}
-            />
+                height={'40'}
+                width={'40'}
+                className={'addButton button'}
+            />,
+            link: '/add'
         }
+
     ];
 
     const handlerTabClick = (e:React.SyntheticEvent) =>{
@@ -54,20 +61,22 @@ export const HeaderMenu = (props:IHeaderMenuType) => {
 
     return (
             <header className={'header__menu'}>
-                {
-                    tabs.map((tab, index)=>{
-                       return <MenuButton
-                            value={tab.value}
-                            className={tab.className}
-                            icon={tab.icon}
-                            active={props.active === index}
-                            key={index}
-                            dataValue={index}
-                            onClick={handlerTabClick}
-                        />
-                    })
-                }
+                <ul className={'header__buttons-list'}>
+                        {
+                            tabs.map((tab, index)=>{
+                                return  <li className={'header__menu-button'}><MenuButton
+                                    icon={tab.icon}
+                                    active={props.active === index}
+                                    key={index}
+                                    dataValue={index}
+                                    onClick={handlerTabClick}
+                                    link={tab.link}
+                                /></li>
+                            })
+                        }
 
+                </ul>
+                <div className={'header__decorLine'} />
             </header>
 
     );
