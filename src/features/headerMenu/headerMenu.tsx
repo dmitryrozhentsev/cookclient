@@ -7,7 +7,6 @@ import { FavouriteIcon } from "../../assets/icons/FavouriteIcon";
 import { AddIcon } from "../../assets/icons/addIcon";
 import { ListIcon } from "../../assets/icons/listIcon";
 import {IHeaderMenuType} from "./headerMenu.type";
-import { Link} from "react-router-dom";
 
 export const HeaderMenu = (props:IHeaderMenuType) => {
     const tabs = [
