@@ -1,0 +1,16 @@
+.addCook__content {
+    display: flex;
+    justify-content: center;
+}
+
+.addCook__wrapper {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addCook__form {
+    display: flex;
+    flex-direction: column;
+}

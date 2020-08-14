@@ -7,8 +7,12 @@ export const DeleteIcon = (props:IconType) => {
         <path d="M22.7139 2L2 21.3329" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M2 2L22.7139 21.3329" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
-    );
+
+);
 };
+
+
+
 
 
 

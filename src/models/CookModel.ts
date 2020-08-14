@@ -6,4 +6,5 @@ export interface CookModel {
   description: string,
   img?: string
   date: string
+  worktime: number
 }

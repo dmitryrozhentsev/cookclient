@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url(./assets/fonts/BebasNeueRegular/BebasNeueRegular.ttf);
+}
+
+@font-face {
+    font-family: 'BebasNeueLight';
+    src: url(./assets/fonts/BebasNeueLight/BebasNeueLight.ttf);
+}
+@font-face {
+    font-family: 'BebasNeueThin';
+    src: url(./assets/fonts/BebasNeueThin/BebasNeueThin.ttf);
+}
+
+body::-webkit-scrollbar { width: 0; }
+body { -ms-overflow-style: none; }
+body { overflow: -moz-scrollbars-none; }

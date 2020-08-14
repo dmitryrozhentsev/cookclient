@@ -1,14 +1,41 @@
-@font-face {
-    font-family: 'BebasNeueRegular';
-    src: url(../../assets/fonts/BebasNeueRegular/BebasNeueRegular.ttf);
-}
-.cookItem {
+
+.cookItemNoImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: relative;
     width: 232px;
     height: 193px;
     border-radius: 30px;
     background: rgba(18, 16, 16, 0.74);
     box-shadow: 0 13px 14px rgba(0, 0, 0, 0.25);
+}
+
+.cookItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('https://img.povar.ru/main/21/c8/ab/38/burger_quotcezarquot-635279.jpg');
+    position: relative;
+    width: 232px;
+    height: 193px;
+    border-radius: 30px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 13px 14px rgba(0, 0, 0, 0.25);
+}
+
+.cookItem:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.35);
+    z-index: 1;
+    border-radius:30px;
 }
 
 .cookItem__navWrapper {
@@ -30,7 +57,14 @@
     align-items: center;
 }
 
+.cookItem__namePreview {
+    height: 100%;
+}
+
 .cookItem__nameText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 2;
     margin: 0;
     width: 100%;
@@ -39,22 +73,40 @@
     letter-spacing: 1px;
     text-align: center;
     font-size: 30px;
+    overflow: hidden;
+    height: 100px;
+}
+
+.cookItem__nameTextShort {
+    font-size: 30px;
+}
+
+.cookItem__nameTextLong {
+    font-size: 20px;
 }
 
 .cookItem__cookingTime {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    text-align: center;
+}
+
+
+
+.cookItem__cookingTimeWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
 }
 
 .cookingTimeIcon {
     z-index: 2;
-    margin-right: 2px;
+    margin-right: 5px;
 }
 
 .cookItem__textTime {
-    margin-left: 2px;
     z-index: 2;
     font-family: BebasNeueRegular, serif;
     letter-spacing: 4px;

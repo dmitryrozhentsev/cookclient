@@ -1,0 +1,21 @@
+.addCook__input {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    outline: none;
+    -webkit-appearance: none;
+    border-bottom: 2px solid #1B1B1F;
+    font-size: 35px;
+    font-family: BebasNeueRegular, serif;
+    letter-spacing: 5px;
+    resize: none;
+}
+
+.addCook__inputWrapper {
+    margin-bottom: 40px;
+}
+
+.addCook__input::placeholder {
+    font-family: BebasNeueLight, serif;
+    color: #1B1B1F;
+}

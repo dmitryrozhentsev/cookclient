@@ -1,6 +1,10 @@
-import {Dispatch, SetStateAction} from "react";
+import React from "react";
 
 export interface IHeaderMenuType {
-    active: number
-    setActive: Dispatch<SetStateAction<number>>
+    tabs: iTab[]
+}
+
+interface iTab {
+    icon: React.ReactElement,
+    link: string
 }

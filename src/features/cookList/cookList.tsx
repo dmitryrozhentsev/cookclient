@@ -12,7 +12,6 @@ export const CookList = () => {
     const dispatch = useDispatch();
     const cookActions = useCookActions(dispatch);
     const { cooks } = useSelector((state: RootState) => {
-        //const hash = location?.hash?.replace('#', '');
         return {
             cooks: state.cooks
         };
@@ -31,7 +30,8 @@ export const CookList = () => {
                             id: cook._id,
                             title: cook.title,
                             description: cook.description,
-                            date: cook.date
+                            date: cook.date,
+                            worktime: cook.worktime
                         });
                     });
                     cookActions.getCooks(cookArray);
@@ -42,20 +42,22 @@ export const CookList = () => {
             })
     };
     useEffect(()=>{
-        if(!cooks.length){
             getCooks();
-        }
-    }, [cooks]);
-
+    }, []);
     return (
         <div className={'cookList__content'}>
             <div className={'cookList__wrapper'}>
                     <ul className={'cookList'}>
-                        {
+                          {
                             cooks.map((x, index)=>{
                                 return (
                                     <li className={'cookList_item'} key={index}>
-                                        <CookItem />
+                                        <CookItem
+                                        title={cooks[index].title}
+                                        worktime={cooks[index].worktime}
+                                        img={cooks[index].img}
+                                        isPreview={false}
+                                        />
                                     </li>
                                 )
                             })
