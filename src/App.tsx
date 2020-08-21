@@ -5,6 +5,7 @@ import { hot } from "react-hot-loader/root";
 import { HeaderMenu } from "./features/headerMenu/headerMenu";
 import { CookList } from "./features/cookList/cookList";
 import { AddCook } from "./features/addCook/AddCook";
+import { CookDescription } from "./components/cookDescription/CookDescription";
 import 'normalize.css';
 import {
     HashRouter as Router,
@@ -67,18 +68,26 @@ const App = () => {
 
     return (
         <Provider store={store}>
-          <Router>
-              <HeaderMenu tabs = {tabs} />
-              <Switch>
-                  <Route
-                      exact path='/'
-                      component={ CookList }
-                  />
-                  <Route
-                      exact path='/add'
-                      component={ AddCook }/>
-              </Switch>
-          </Router>
+              <Router>
+                  <HeaderMenu tabs = {tabs} />
+                      <Switch>
+                          <Route
+                              path='/item'
+                              component={ CookDescription }>
+                              <Route
+                                  path='/:cookId'
+                                  component={ CookDescription } />
+                          </Route>
+                          <Route
+                              exact path='/'
+                              component={ CookList }
+                          />
+                          <Route
+                              exact path='/add'
+                              component={ AddCook }/>
+                          <Route />
+                      </Switch>
+              </Router>
         </Provider>
     );
   };

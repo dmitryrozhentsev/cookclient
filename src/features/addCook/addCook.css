@@ -8,9 +8,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 135px;
 }
 
 .addCook__form {
     display: flex;
     flex-direction: column;
+}
+
+.addCook__dataSend {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.addCook__input {
+    width: 400px;
+}
+
+.addCook__button {
+    border:0;
+    font-family: BebasNeueLight, serif;
+    background-color: transparent;
+    font-size: 35px;
 }

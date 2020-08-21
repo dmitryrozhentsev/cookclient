@@ -43,7 +43,7 @@ export const CookItem = (props:CookItemProps) => {
                       </div>
                   </div>
                     :
-              <div className={'cookItem'}>
+              <div className={'cookItem'} style={{backgroundImage:`url(http://172.16.2.244:8080/img/${props.img})`}}>
                   <div className={'cookItem__nav'}>
                       <div className={'cookItem__navWrapper'}>
                           <button className={'cookItem__addFavourite cookItem__button'}>
@@ -68,7 +68,7 @@ export const CookItem = (props:CookItemProps) => {
                       <p className={'cookItem__textTime'}>{props.worktime} минут</p>
                   </div>
               </div>
-          : <div className={'cookItemNoImg'}>
+          : !isImg ? <div className={'cookItemNoImg'}>
               <div className={'cookItem__nameWrapper cookItem__namePreview'}>
                   {
                       titleLength < 10 ? (
@@ -80,7 +80,18 @@ export const CookItem = (props:CookItemProps) => {
                   <div className={'cookItem__bgIcon'}>
                       <CookIcon className={'cookbg'} width={'140'} height={'150'}/>
                   </div>
-
+              </div>
+          </div>
+          :
+          <div className={'cookItem'} style={{backgroundImage:`${props.img}`}}>
+              <div className={'cookItem__nameWrapper cookItem__namePreview'}>
+                  {
+                      titleLength < 10 ? (
+                          <p className={'cookItem__nameText cookItem__nameTextShort'}>{props.title}</p>
+                      ) : (
+                          <p className={'cookItem__nameText cookItem__nameTextLong'}>{props.title}</p>
+                      )
+                  }
               </div>
           </div>
     );

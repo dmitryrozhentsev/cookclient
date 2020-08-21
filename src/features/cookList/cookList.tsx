@@ -6,6 +6,7 @@ import {ICookItemFromServer, ICookItem} from "./cookList.types";
 import {useCookActions} from "../../actions";
 import {RootState} from "../../reducers";
 import {useDispatch, useSelector} from "react-redux";
+import {Link} from "react-router-dom";
 
 
 export const CookList = () => {
@@ -49,16 +50,20 @@ export const CookList = () => {
             <div className={'cookList__wrapper'}>
                     <ul className={'cookList'}>
                           {
-                            cooks.map((x, index)=>{
+                            cooks.map((cook, index)=>{
                                 return (
-                                    <li className={'cookList_item'} key={index}>
-                                        <CookItem
-                                        title={cooks[index].title}
-                                        worktime={cooks[index].worktime}
-                                        img={cooks[index].img}
-                                        isPreview={false}
-                                        />
+
+                                    <li className={'cookList_item'} key={index} id={cook.id}>
+                                        <Link to={`/item/${cook.id}`}>
+                                            <CookItem
+                                            title={cook.title}
+                                            worktime={cook.worktime}
+                                            img={cook.img}
+                                            isPreview={false}
+                                            />
+                                        </Link>
                                     </li>
+
                                 )
                             })
                         }
