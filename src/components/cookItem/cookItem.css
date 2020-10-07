@@ -75,6 +75,11 @@
     font-size: 30px;
     overflow: hidden;
     height: 100px;
+    border-bottom: none;
+}
+
+.routerLink {
+    text-decoration: none;
 }
 
 .cookItem__nameTextShort {

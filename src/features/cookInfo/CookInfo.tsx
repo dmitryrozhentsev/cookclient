@@ -1,19 +1,23 @@
 import * as React from 'react';
-import './addCook.css';
+import './CookInfo.css';
 import { CookItem } from "../../components/cookItem/cookItem";
 import { Input } from "../../components/input/Input";
 import {SyntheticEvent, useRef, useState} from "react";
 // interface HTMLInputEvent extends SyntheticEvent {
 //     target: HTMLInputElement & EventTarget;
 // }
+import { CookInfoTypes } from './CookInfo.types';
 
-export const AddCook = () => {
+export const CookInfo = (props:CookInfoTypes) => {
+
     const [nameInput, setNameInput] = useState('');
     const [ingredients, setIngredients] = useState('');
     const [recipe, setRecipe] = useState('');
     const [time, setTime] = useState('');
     const [fileInputUrl, setfileInputUrl] = useState('');
     const fileRef = useRef(null);
+
+
     const handleNameChange = (event: SyntheticEvent) => {
         // @ts-ignore
         setNameInput(`${event.target.value}`);

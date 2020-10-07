@@ -6,8 +6,8 @@ import {ICookItemFromServer, ICookItem} from "./cookList.types";
 import {useCookActions} from "../../actions";
 import {RootState} from "../../reducers";
 import {useDispatch, useSelector} from "react-redux";
-import {Link} from "react-router-dom";
-
+import {Link} from "react-router-dom"
+import { SERVERIPPORT } from '../../../constants/backend';
 
 export const CookList = () => {
     const dispatch = useDispatch();
@@ -19,7 +19,7 @@ export const CookList = () => {
     });
     const getCooks = ():void=>{
         let cookArray:ICookItem[] = [];
-        fetch('http://172.16.2.244:8080')
+        fetch(`http://${SERVERIPPORT}`)
             .then((response) => {
                 return response.json();
             })
@@ -52,9 +52,8 @@ export const CookList = () => {
                           {
                             cooks.map((cook, index)=>{
                                 return (
-
                                     <li className={'cookList_item'} key={index} id={cook.id}>
-                                        <Link to={`/item/${cook.id}`}>
+                                        <Link to={`/item/${cook.id}`} className={'routerLink'}>
                                             <CookItem
                                             title={cook.title}
                                             worktime={cook.worktime}

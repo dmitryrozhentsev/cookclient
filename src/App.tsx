@@ -4,7 +4,7 @@ import { configureStore } from './store';
 import { hot } from "react-hot-loader/root";
 import { HeaderMenu } from "./features/headerMenu/headerMenu";
 import { CookList } from "./features/cookList/cookList";
-import { AddCook } from "./features/addCook/AddCook";
+import { CookInfo } from "./features/cookInfo/CookInfo";
 import { CookDescription } from "./components/cookDescription/CookDescription";
 import 'normalize.css';
 import {
@@ -84,7 +84,7 @@ const App = () => {
                           />
                           <Route
                               exact path='/add'
-                              component={ AddCook }/>
+                              component={ CookInfo }/>
                           <Route />
                       </Switch>
               </Router>

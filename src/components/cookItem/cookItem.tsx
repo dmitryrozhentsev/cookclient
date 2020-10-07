@@ -5,6 +5,7 @@ import { DeleteIcon } from "../../assets/icons/deleteIcon";
 import { CookIcon } from "../../assets/icons/cookIcon";
 import { TimeIcon } from "../../assets/icons/timeIcon";
 import { CookItemProps } from "./cookItem.types";
+import { SERVERIPPORT } from '../../../constants/backend';
 
 export const CookItem = (props:CookItemProps) => {
     const isImg = Boolean(props.img);
@@ -43,7 +44,7 @@ export const CookItem = (props:CookItemProps) => {
                       </div>
                   </div>
                     :
-              <div className={'cookItem'} style={{backgroundImage:`url(http://172.16.2.244:8080/img/${props.img})`}}>
+              <div className={'cookItem'} style={{backgroundImage:`url(http://${SERVERIPPORT}/img/${props.img})`}}>
                   <div className={'cookItem__nav'}>
                       <div className={'cookItem__navWrapper'}>
                           <button className={'cookItem__addFavourite cookItem__button'}>
