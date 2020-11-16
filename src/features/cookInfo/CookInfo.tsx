@@ -3,6 +3,7 @@ import './CookInfo.css';
 import { CookItem } from "../../components/cookItem/cookItem";
 import { Input } from "../../components/input/Input";
 import {SyntheticEvent, useRef, useState} from "react";
+import {SERVERIPPORT} from '../../../constants/backend';
 // interface HTMLInputEvent extends SyntheticEvent {
 //     target: HTMLInputElement & EventTarget;
 // }
@@ -67,13 +68,17 @@ export const CookInfo = (props:CookInfoTypes) => {
             // @ts-ignore
             formData.append('img', event.target[4].files[0]);
         }
-
-        const response = await fetch('http://172.16.2.244:8080', {
+        await fetch( `http://${SERVERIPPORT}`,{
             method: 'POST',
             body: formData,
             mode: "no-cors"
-        });
-        console.log(response);
+        })
+            .then((res)=>{
+                {
+                    console.log('response',res);
+                }
+            });
+
     };
 
     return (

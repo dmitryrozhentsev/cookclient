@@ -1,1 +1,1 @@
-export const SERVERIPPORT:string = '172.16.2.201:8080';
+export const SERVERIPPORT:string = '172.16.2.144:8080';

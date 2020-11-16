@@ -3,7 +3,8 @@ export interface ICookItemFromServer {
     description: string,
     title: string,
     img?: string,
-    worktime: number
+    ingredients: Array<string>,
+    worktime: number,
     __v: number,
     _id: string,
 }

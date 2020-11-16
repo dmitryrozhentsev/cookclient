@@ -53,7 +53,9 @@ export const CookList = () => {
                             cooks.map((cook, index)=>{
                                 return (
                                     <li className={'cookList_item'} key={index} id={cook.id}>
-                                        <Link to={`/item/${cook.id}`} className={'routerLink'}>
+                                        <Link to={`/item/${cook.id}`}
+                                              className={'routerLink'}
+                                        >
                                             <CookItem
                                             title={cook.title}
                                             worktime={cook.worktime}

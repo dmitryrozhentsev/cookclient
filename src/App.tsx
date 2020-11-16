@@ -72,11 +72,8 @@ const App = () => {
                   <HeaderMenu tabs = {tabs} />
                       <Switch>
                           <Route
-                              path='/item'
+                              path='/item/:cookId'
                               component={ CookDescription }>
-                              <Route
-                                  path='/:cookId'
-                                  component={ CookDescription } />
                           </Route>
                           <Route
                               exact path='/'
